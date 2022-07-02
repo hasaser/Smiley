@@ -1,0 +1,20 @@
+{
+  "name": "vuetest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "templates/js/index.js",
+  "dependencies": {
+    "jpalette": "^1.0.4",
+    "jquery": "^3.6.0",
+    "pixi.js": "^6.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "python __init__.py",
+    "heroku-postbuild": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
