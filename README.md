@@ -36,4 +36,4 @@ npm run build
 
 Run the `__init__.py` file and open http://localhost:8888/
 
-[application image](/readme/gif.gif)
+![application image](/readme/gif.gif)
