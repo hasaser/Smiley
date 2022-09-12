@@ -8,7 +8,7 @@ export function toggleAlpha(){
             circle.alpha += step;
         }
         else if(!stop && circle.alpha > circle.startAlpha){
-            circle.alpha -= step
+            circle.alpha -= step;
         }
     });
 }

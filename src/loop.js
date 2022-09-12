@@ -1,4 +1,5 @@
 import {MOUTHCIRCLENUM, now, stop } from ".";
+import { getColor } from "./color";
 
 export function mouthLoop(circles, range){
     const tetaY = Math.PI / 360;
@@ -36,5 +37,11 @@ export function* NowGen(divider=1){
     }
 }
 
-
+export function colorLoop(circles){
+    circles.forEach(circle => {
+        // if(circle.hsl <= 1 || circle.hsl >= 359) {circle.colorDirection *= -1}
+        circle.hsl+=0.05;
+        circle.tint = getColor(circle)
+    });
+}
 

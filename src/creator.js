@@ -1,4 +1,5 @@
 import {Graphics} from "pixi.js";
+import { getColor } from "./color.js";
 import {app, allCircles} from "./index.js"
 function generateRandomColor() {
     var letters = '0123456789ABCDEF';
@@ -10,12 +11,15 @@ function generateRandomColor() {
 }
 
 export function createCircle(r, x, y){
-    const circle = new Graphics();
-    circle.beginFill(generateRandomColor());
+    let circle = new Graphics();
+    circle.beginFill(0xFFFFFF);
     circle.drawCircle(0, 0, r);
     circle.endFill();
     circle.x = x;
     circle.y = y;
+    circle.hsl = Math.floor(Math.random() * 360)
+    circle.colorDirection = 1;
+    circle.tint = getColor(circle);
     circle.startAlpha = Math.random()
     circle.alpha = circle.startAlpha
     app.stage.addChild(circle);
@@ -45,6 +49,7 @@ export function createEye(r, x, y){
         circle.alpha = circle.startAlpha
         circle.random = Math.random()
         circles.push(circle)
+        allCircles.push(circle)
     }
     return circles
 }

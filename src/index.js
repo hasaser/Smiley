@@ -1,6 +1,6 @@
 import {Application} from 'pixi.js';
 import {createCircle, createMouth, createEye} from "./creator.js";
-import {mouthLoop, eyeLoop, NowGen} from "./loop.js";
+import {mouthLoop, eyeLoop, NowGen, colorLoop} from "./loop.js";
 import $ from "jquery";
 import { toggleAlpha } from './alpha.js';
 export const app = new Application();
@@ -38,6 +38,7 @@ function gameloop(){
     now = nowGen.next().value;
     now20 = nowGen20.next().value;
     now75 = nowGen75.next().value;
+    colorLoop(allCircles);
     eyeLoop(rightEye, 400, 200)
     eyeLoop(leftEye, 200, 200)
     mouthLoop(mouth, 10)
